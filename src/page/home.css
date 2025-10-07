@@ -1,0 +1,71 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.conic {
+  background-image: conic-gradient(
+    from var(--angle) at center,
+    transparent,
+    yellow,
+    transparent,
+    red
+  );
+  animation: rotat 2s linear infinite;
+}
+.conic2 {
+  background-image: conic-gradient(
+    from var(--angle) at center,
+    #353b48,
+    #34495e
+  );
+  animation: rotat 1s linear infinite;
+}
+.coniccon::after {
+  background-image: conic-gradient(
+    from var(--angle) at center,
+    transparent 0% 30%,
+    #ffac8a 30% 50%,
+    transparent 50% 80%,
+    #facd48 80% 100%
+  );
+  inset: -10px;
+  animation: rotat 2s linear infinite;
+  position: absolute;
+  z-index: -1;
+}
+.coniccon {
+  position: relative;
+}
+@keyframes rotat {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+/* scroll bar */
+
+/* src/index.css বা src/App.css */
+.custom-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #e056fa #fffaca; /* Firefox: thumb + track */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px; /* scrollbar width */
+  height: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: purple; /* Tailwind এর gray-800 */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: red; /* Tailwind amber-500 */
+  border-radius: 10px;
+  border: 2px solid #1f2937;
+}

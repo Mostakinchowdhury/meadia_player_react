@@ -1,0 +1,59 @@
+/* range-style.css */
+
+input[type="range"] {
+  -webkit-appearance: none; /* Chrome, Safari */
+  -moz-appearance: none; /* Firefox */
+  width: 250px;
+  height: 8px;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Track styling */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    #fffaca 0% var(--percent),
+    #cdd9e3 var(--percent) 100%
+  );
+  border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  border-radius: 4px;
+}
+
+/* Thumb styling */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: #fffaca;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-top: -4px; /* Position center */
+  transition: background 0.3s;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+/* Hover effect */
+input[type="range"]:hover::-webkit-slider-thumb {
+  background: #e63946;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  background: #e63946;
+}
